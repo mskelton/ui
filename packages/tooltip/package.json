@@ -1,0 +1,6 @@
+{
+  "name": "@mskelton/ui-tooltip",
+  "devDependencies": {
+    "eslint": "^8.51.0"
+  }
+}

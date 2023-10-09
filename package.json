@@ -1,0 +1,16 @@
+{
+  "name": "ui",
+  "description": "UI library build in web-platform features.",
+  "author": "Mark Skelton",
+  "license": "ISC",
+  "packageManager": "pnpm@8.9.0",
+  "scripts": {
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.15",
+    "typescript": "^5.2.2"
+  }
+}
