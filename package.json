@@ -7,9 +7,12 @@
   "scripts": {
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "fmt": "prettier --write .",
+    "fmt:check": "prettier --write ."
   },
   "devDependencies": {
+    "prettier": "^3.0.3",
     "turbo": "^1.10.15",
     "typescript": "^5.2.2"
   }
