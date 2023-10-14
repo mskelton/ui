@@ -1,9 +1,9 @@
-import { nodes as defaultNodes, Tag } from '@markdoc/markdoc'
-import { slugifyWithCounter } from '@sindresorhus/slugify'
-import yaml from 'js-yaml'
+import { nodes as defaultNodes, Tag } from "@markdoc/markdoc"
+import { slugifyWithCounter } from "@sindresorhus/slugify"
+import yaml from "js-yaml"
 
-import { DocsLayout } from '@/components/DocsLayout'
-import { Fence } from '@/components/Fence'
+import { DocsLayout } from "@/components/DocsLayout"
+import { Fence } from "@/components/Fence"
 
 let documentSlugifyMap = new Map()
 
@@ -30,7 +30,7 @@ const nodes = {
       let slugify = documentSlugifyMap.get(config)
       let attributes = node.transformAttributes(config)
       let children = node.transformChildren(config)
-      let text = children.filter((child) => typeof child === 'string').join(' ')
+      let text = children.filter((child) => typeof child === "string").join(" ")
       let id = attributes.id ?? slugify(text)
 
       return new Tag(
@@ -46,7 +46,7 @@ const nodes = {
       ...defaultNodes.th.attributes,
       scope: {
         type: String,
-        default: 'col',
+        default: "col",
       },
     },
   },

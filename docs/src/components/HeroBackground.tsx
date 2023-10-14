@@ -1,6 +1,6 @@
-import { useId } from 'react'
+import { useId } from "react"
 
-export function HeroBackground(props: React.ComponentPropsWithoutRef<'svg'>) {
+export function HeroBackground(props: React.ComponentPropsWithoutRef<"svg">) {
   let id = useId()
 
   return (

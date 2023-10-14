@@ -1,0 +1,38 @@
+---
+title: Tooltip
+nextjs:
+  metadata:
+    title: Tooltip
+    description:
+      Help text that displays when the user hovers or focuses the trigger
+      element.
+---
+
+Help text that displays when the user hovers or focuses the trigger element.
+
+---
+
+import TooltipDemo from "./TooltipDemo"
+
+## Example
+
+```jsx
+import { Button, Tooltip } from "@mskelton/ui"
+
+return (
+  <Tooltip content="Edit">
+    <Button>✏️</Button>
+  </Tooltip>
+)
+```
+
+<TooltipDemo />
+
+## Features
+
+The `Tooltip` component is built using the CSS
+[anchor positioning](https://developer.chrome.com/blog/tether-elements-to-each-other-with-css-anchor-positioning/)
+API. This API is still extremely experimental, which is exactly why we are using
+it in this library!
+
+## Props

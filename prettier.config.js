@@ -1,6 +1,7 @@
 /** @type {import('prettier').Options} */
 module.exports = {
-  singleQuote: true,
+  singleQuote: false,
   semi: false,
-  plugins: ['prettier-plugin-tailwindcss'],
-}
+  proseWrap: "always",
+  plugins: ["prettier-plugin-tailwindcss"],
+};

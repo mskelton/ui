@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation"
 
-import { navigation } from '@/lib/navigation'
+import { navigation } from "@/lib/navigation"
 
 export function DocsHeader({ title }: { title?: string }) {
   let pathname = usePathname()

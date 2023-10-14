@@ -1,14 +1,14 @@
-'use client'
+"use client"
 
-import { Suspense, useCallback, useEffect, useState } from 'react'
-import Link from 'next/link'
-import { usePathname, useSearchParams } from 'next/navigation'
-import { Dialog } from '@headlessui/react'
+import { Suspense, useCallback, useEffect, useState } from "react"
+import Link from "next/link"
+import { usePathname, useSearchParams } from "next/navigation"
+import { Dialog } from "@headlessui/react"
 
-import { Logomark } from '@/components/Logo'
-import { Navigation } from '@/components/Navigation'
+import { Logomark } from "@/components/Logo"
+import { Navigation } from "@/components/Navigation"
 
-function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function MenuIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       aria-hidden="true"
@@ -23,7 +23,7 @@ function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function CloseIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
     <svg
       aria-hidden="true"

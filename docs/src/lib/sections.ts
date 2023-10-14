@@ -1,8 +1,8 @@
-import { type Node } from '@markdoc/markdoc'
-import { slugifyWithCounter } from '@sindresorhus/slugify'
+import { type Node } from "@markdoc/markdoc"
+import { slugifyWithCounter } from "@sindresorhus/slugify"
 
 interface HeadingNode extends Node {
-  type: 'heading'
+  type: "heading"
   attributes: {
     level: 1 | 2 | 3 | 4 | 5 | 6
     id?: string
@@ -24,10 +24,10 @@ type H3Node = HeadingNode & {
 
 function isHeadingNode(node: Node): node is HeadingNode {
   return (
-    node.type === 'heading' &&
+    node.type === "heading" &&
     [1, 2, 3, 4, 5, 6].includes(node.attributes.level) &&
-    (typeof node.attributes.id === 'string' ||
-      typeof node.attributes.id === 'undefined')
+    (typeof node.attributes.id === "string" ||
+      typeof node.attributes.id === "undefined")
   )
 }
 
@@ -40,9 +40,9 @@ function isH3Node(node: Node): node is H3Node {
 }
 
 function getNodeText(node: Node) {
-  let text = ''
+  let text = ""
   for (let child of node.children ?? []) {
-    if (child.type === 'text') {
+    if (child.type === "text") {
       text += child.attributes.content
     }
     text += getNodeText(child)
@@ -50,13 +50,13 @@ function getNodeText(node: Node) {
   return text
 }
 
-export type Subsection = H3Node['attributes'] & {
+export type Subsection = H3Node["attributes"] & {
   id: string
   title: string
   children?: undefined
 }
 
-export type Section = H2Node['attributes'] & {
+export type Section = H2Node["attributes"] & {
   id: string
   title: string
   children: Array<Subsection>
@@ -76,7 +76,7 @@ export function collectSections(
         if (isH3Node(node)) {
           if (!sections[sections.length - 1]) {
             throw new Error(
-              'Cannot add `h3` to table of contents without a preceding `h2`',
+              "Cannot add `h3` to table of contents without a preceding `h2`",
             )
           }
           sections[sections.length - 1].children.push({
