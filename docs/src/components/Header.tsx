@@ -18,7 +18,7 @@ export function Header() {
       <header
         className={clsx(
           "sticky top-0 z-50 flex flex-none flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 sm:px-6 lg:px-8",
-          "dark:animate-[header_linear_forwards] dark:shadow-none dark:[animation-range:exit]",
+          "dark:animate-[header_linear_forwards] dark:bg-slate-900/95 dark:shadow-none dark:[animation-range:exit]",
         )}
         style={{ animationTimeline: "--tl" }}
       >

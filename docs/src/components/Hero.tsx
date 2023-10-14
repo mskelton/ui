@@ -1,5 +1,3 @@
-"use client"
-
 import { Fragment } from "react"
 import Image from "next/image"
 import clsx from "clsx"
@@ -8,6 +6,8 @@ import { Button } from "@/components/Button"
 import { HeroBackground } from "@/components/HeroBackground"
 import blurCyanImage from "@/images/blur-cyan.png"
 import blurIndigoImage from "@/images/blur-indigo.png"
+import { Highlight } from "./Highlight"
+import { TrafficLightsIcon } from "./icons/TrafficLightsIcon"
 
 const codeLanguage = "javascript"
 const code = `export default {
@@ -22,16 +22,6 @@ const tabs = [
   { name: "cache-advance.config.js", isActive: true },
   { name: "package.json", isActive: false },
 ]
-
-function TrafficLightsIcon(props: React.ComponentPropsWithoutRef<"svg">) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 42 10" fill="none" {...props}>
-      <circle cx="5" cy="5" r="4.5" />
-      <circle cx="21" cy="5" r="4.5" />
-      <circle cx="37" cy="5" r="4.5" />
-    </svg>
-  )
-}
 
 export function Hero() {
   return (
@@ -133,40 +123,12 @@ export function Hero() {
                         </Fragment>
                       ))}
                     </div>
-                    {/* <Highlight */}
-                    {/*   code={code} */}
-                    {/*   language={codeLanguage} */}
-                    {/*   theme={{ plain: {}, styles: [] }} */}
-                    {/* > */}
-                    {/*   {({ */}
-                    {/*     className, */}
-                    {/*     style, */}
-                    {/*     tokens, */}
-                    {/*     getLineProps, */}
-                    {/*     getTokenProps, */}
-                    {/*   }) => ( */}
-                    {/*     <pre */}
-                    {/*       className={clsx( */}
-                    {/*         className, */}
-                    {/*         "flex overflow-x-auto pb-6", */}
-                    {/*       )} */}
-                    {/*       style={style} */}
-                    {/*     > */}
-                    {/*       <code className="px-4"> */}
-                    {/*         {tokens.map((line, lineIndex) => ( */}
-                    {/*           <div key={lineIndex} {...getLineProps({ line })}> */}
-                    {/*             {line.map((token, tokenIndex) => ( */}
-                    {/*               <span */}
-                    {/*                 key={tokenIndex} */}
-                    {/*                 {...getTokenProps({ token })} */}
-                    {/*               /> */}
-                    {/*             ))} */}
-                    {/*           </div> */}
-                    {/*         ))} */}
-                    {/*       </code> */}
-                    {/*     </pre> */}
-                    {/*   )} */}
-                    {/* </Highlight> */}
+
+                    <Highlight
+                      className="px-4 pb-6"
+                      code={code}
+                      lang={codeLanguage}
+                    />
                   </div>
                 </div>
               </div>
