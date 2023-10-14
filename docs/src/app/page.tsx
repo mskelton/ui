@@ -8,8 +8,9 @@ export default function Page() {
   return (
     <MainLayout hero={<Hero />}>
       <DocsLayout
-        frontmatter={{
+        meta={{
           title: "Getting started",
+          description: "",
         }}
         nodes={[]}
       >

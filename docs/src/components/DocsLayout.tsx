@@ -6,15 +6,22 @@ import { Prose } from "@/components/Prose"
 import { TableOfContents } from "@/components/TableOfContents"
 import { collectSections } from "@/lib/sections"
 
+export interface PageMeta {
+  title: string
+  description: string
+}
+
+export interface DocsLayoutProps {
+  children: React.ReactNode
+  meta: PageMeta
+  nodes: Array<Node>
+}
+
 export function DocsLayout({
   children,
-  frontmatter: { title },
+  meta: { title },
   nodes,
-}: {
-  children: React.ReactNode
-  frontmatter: { title?: string }
-  nodes: Array<Node>
-}) {
+}: DocsLayoutProps) {
   let tableOfContents = collectSections(nodes)
 
   return (

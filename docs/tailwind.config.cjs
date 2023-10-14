@@ -30,11 +30,12 @@ const config = {
     keyframes: ({ theme }) => ({
       header: {
         from: {
-          backgroundColor: "transparent",
+          background: "transparent",
+          backdropFilter: "blur(0)",
         },
         to: {
-          backdropFilter: "blur(0)",
-          backgroundColor: theme("colors.slate.900/75"),
+          background: theme("colors.slate.900/0.75"),
+          backdropFilter: "blur(8px)",
         },
       },
     }),
@@ -42,6 +43,4 @@ const config = {
   plugins: [require("@tailwindcss/typography")],
 }
 
-// "dark:bg-slate-900/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-slate-900/75",
-// // "dark:bg-transparent",
 export default config

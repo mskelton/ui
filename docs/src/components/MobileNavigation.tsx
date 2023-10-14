@@ -7,36 +7,8 @@ import { Dialog } from "@headlessui/react"
 
 import { Logomark } from "@/components/Logo"
 import { Navigation } from "@/components/Navigation"
-
-function MenuIcon(props: React.ComponentPropsWithoutRef<"svg">) {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="2"
-      strokeLinecap="round"
-      {...props}
-    >
-      <path d="M4 7h16M4 12h16M4 17h16" />
-    </svg>
-  )
-}
-
-function CloseIcon(props: React.ComponentPropsWithoutRef<"svg">) {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="2"
-      strokeLinecap="round"
-      {...props}
-    >
-      <path d="M5 5l14 14M19 5l-14 14" />
-    </svg>
-  )
-}
+import { CloseIcon } from "./icons/CloseIcon"
+import { MenuIcon } from "./icons/MenuIcon"
 
 function CloseOnNavigation({ close }: { close: () => void }) {
   let pathname = usePathname()
@@ -73,9 +45,11 @@ export function MobileNavigation() {
       >
         <MenuIcon className="h-6 w-6 stroke-slate-500" />
       </button>
+
       <Suspense fallback={null}>
         <CloseOnNavigation close={close} />
       </Suspense>
+
       <Dialog
         open={isOpen}
         onClose={() => close()}
@@ -91,10 +65,12 @@ export function MobileNavigation() {
             >
               <CloseIcon className="h-6 w-6 stroke-slate-500" />
             </button>
+
             <Link href="/" className="ml-6" aria-label="Home page">
               <Logomark className="h-9 w-9" />
             </Link>
           </div>
+
           <Navigation className="mt-5 px-1" onLinkClick={onLinkClick} />
         </Dialog.Panel>
       </Dialog>

@@ -26,6 +26,8 @@ export function Prose<T extends React.ElementType = "div">({
         "prose-pre:rounded-xl prose-pre:bg-slate-900 prose-pre:shadow-lg dark:prose-pre:bg-slate-800/60 dark:prose-pre:shadow-none dark:prose-pre:ring-1 dark:prose-pre:ring-slate-300/10",
         // hr
         "dark:prose-hr:border-slate-800",
+        // code
+        "prose-code:rounded prose-code:px-1 prose-code:py-0.5 prose-code:bg-slate-900 prose-code:shadow-lg dark:prose-code:bg-slate-800/60 dark:prose-code:shadow-none dark:prose-code:ring-1 dark:prose-code:ring-slate-300/10 prose-code:before:content-none prose-code:after:content-none",
       )}
       {...props}
     />
