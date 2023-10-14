@@ -3,7 +3,6 @@
 import { Fragment } from "react"
 import Image from "next/image"
 import clsx from "clsx"
-import { Highlight } from "prism-react-renderer"
 
 import { Button } from "@/components/Button"
 import { HeroBackground } from "@/components/HeroBackground"
@@ -134,40 +133,40 @@ export function Hero() {
                         </Fragment>
                       ))}
                     </div>
-                    <Highlight
-                      code={code}
-                      language={codeLanguage}
-                      theme={{ plain: {}, styles: [] }}
-                    >
-                      {({
-                        className,
-                        style,
-                        tokens,
-                        getLineProps,
-                        getTokenProps,
-                      }) => (
-                        <pre
-                          className={clsx(
-                            className,
-                            "flex overflow-x-auto pb-6",
-                          )}
-                          style={style}
-                        >
-                          <code className="px-4">
-                            {tokens.map((line, lineIndex) => (
-                              <div key={lineIndex} {...getLineProps({ line })}>
-                                {line.map((token, tokenIndex) => (
-                                  <span
-                                    key={tokenIndex}
-                                    {...getTokenProps({ token })}
-                                  />
-                                ))}
-                              </div>
-                            ))}
-                          </code>
-                        </pre>
-                      )}
-                    </Highlight>
+                    {/* <Highlight */}
+                    {/*   code={code} */}
+                    {/*   language={codeLanguage} */}
+                    {/*   theme={{ plain: {}, styles: [] }} */}
+                    {/* > */}
+                    {/*   {({ */}
+                    {/*     className, */}
+                    {/*     style, */}
+                    {/*     tokens, */}
+                    {/*     getLineProps, */}
+                    {/*     getTokenProps, */}
+                    {/*   }) => ( */}
+                    {/*     <pre */}
+                    {/*       className={clsx( */}
+                    {/*         className, */}
+                    {/*         "flex overflow-x-auto pb-6", */}
+                    {/*       )} */}
+                    {/*       style={style} */}
+                    {/*     > */}
+                    {/*       <code className="px-4"> */}
+                    {/*         {tokens.map((line, lineIndex) => ( */}
+                    {/*           <div key={lineIndex} {...getLineProps({ line })}> */}
+                    {/*             {line.map((token, tokenIndex) => ( */}
+                    {/*               <span */}
+                    {/*                 key={tokenIndex} */}
+                    {/*                 {...getTokenProps({ token })} */}
+                    {/*               /> */}
+                    {/*             ))} */}
+                    {/*           </div> */}
+                    {/*         ))} */}
+                    {/*       </code> */}
+                    {/*     </pre> */}
+                    {/*   )} */}
+                    {/* </Highlight> */}
                   </div>
                 </div>
               </div>
