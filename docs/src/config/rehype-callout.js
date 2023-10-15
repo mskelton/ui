@@ -17,10 +17,8 @@ const config = [
       ERROR: error,
     },
     class: {
-      default: [
-        "px-4 -mx-4 relative dark:text-white transition-colors",
-        "sm:rounded sm:-mr-6 sm:-ml-7 py-4 sm:px-6 sm:border-l-4",
-      ],
+      default:
+        "px-4 relative dark:text-white rounded py-4 sm:px-6 border-l-4 mb-4",
       INFO: "bg-indigo-300/50 border-indigo-500 dark:bg-indigo-900/50 dark:border-indigo-500",
       WARN: "bg-yellow-300/50 border-yellow-500 dark:bg-yellow-900/50 dark:border-yellow-500",
       ERROR:
@@ -32,8 +30,7 @@ const config = [
       WARN: "text-yellow-700 dark:text-yellow-500",
       ERROR: "text-red-600 dark:text-red-500",
     },
-    titleClass:
-      "text-zinc-900 dark:text-white font-bold mb-2 block transition-colors",
+    titleClass: "text-zinc-900 dark:text-white font-semibold mb-2 block",
     contentClass: "text-zinc-700 dark:text-zinc-200 transition-colors",
   },
 ]

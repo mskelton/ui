@@ -1,16 +1,10 @@
 import clsx from "clsx"
 
-export function Prose<T extends React.ElementType = "div">({
-  as,
-  className,
-  ...props
-}: React.ComponentPropsWithoutRef<T> & {
-  as?: T
-}) {
-  let Component = as ?? "div"
+export interface ProseProps extends React.HTMLAttributes<HTMLDivElement> {}
 
+export function Prose({ className, ...props }: ProseProps) {
   return (
-    <Component
+    <div
       className={clsx(
         className,
         "prose prose-slate dark:prose-invert max-w-none dark:text-slate-400",
@@ -27,7 +21,7 @@ export function Prose<T extends React.ElementType = "div">({
         // hr
         "dark:prose-hr:border-slate-800",
         // code
-        "prose-code:rounded prose-code:px-1 prose-code:py-0.5 prose-code:bg-slate-900 prose-code:shadow-lg dark:prose-code:bg-slate-800/60 dark:prose-code:shadow-none dark:prose-code:ring-1 dark:prose-code:ring-slate-300/10 prose-code:before:content-none prose-code:after:content-none",
+        "prose-code:rounded prose-code:px-1 prose-code:py-0.5 prose-code:bg-slate-900 prose-code:shadow-lg dark:prose-code:bg-slate-800/60 dark:prose-code:shadow-none dark:prose-code:ring-1 dark:prose-code:ring-zinc-700 prose-code:before:content-none prose-code:after:content-none",
       )}
       {...props}
     />
