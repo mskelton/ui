@@ -1,19 +1,13 @@
 import { Hero } from "@/components/Hero"
 import { MainLayout } from "@/components/MainLayout"
-import Content from "./content.mdx"
+import Content, { meta } from "./content.mdx"
 import { QuickLinks, QuickLink } from "@/components/QuickLinks"
 import { DocsLayout } from "@/components/DocsLayout"
 
 export default function Page() {
   return (
     <MainLayout hero={<Hero />}>
-      <DocsLayout
-        meta={{
-          title: "Getting started",
-          description: "",
-        }}
-        nodes={[]}
-      >
+      <DocsLayout meta={meta} nodes={[]}>
         <p className="lead">
           Learn how to get CacheAdvance set up in your project in under thirty
           minutes or its free.

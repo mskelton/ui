@@ -1,4 +1,5 @@
 import remarkFrontmatterMeta from "./src/config/remark-frontmatter-meta.js"
+import withSearch from "./src/config/search.js"
 import { fileURLToPath } from "node:url"
 import rehypeShiki from "./src/config/rehype-shiki.js"
 import remarkFrontmatter from "remark-frontmatter"
@@ -29,4 +30,4 @@ const withMDX = mdx({
   },
 })
 
-export default withMDX(config)
+export default withSearch(withMDX(config))

@@ -20,9 +20,12 @@ import {
 } from "@algolia/autocomplete-core"
 import { Dialog } from "@headlessui/react"
 import clsx from "clsx"
-import { type Result } from "@/markdoc/search.mjs"
+import { type Result } from "@/config/search.js"
+import { search } from "@/lib/search"
 
 import { navigation } from "@/lib/navigation"
+import { LoadingIcon } from "./icons/LoadingIcon"
+import { SearchIcon } from "./icons/SearchIcon"
 
 type EmptyObject = Record<string, never>
 
@@ -32,14 +35,6 @@ type Autocomplete = AutocompleteApi<
   React.MouseEvent,
   React.KeyboardEvent
 >
-
-function SearchIcon(props: React.ComponentPropsWithoutRef<"svg">) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 20 20" {...props}>
-      <path d="M16.293 17.707a1 1 0 0 0 1.414-1.414l-1.414 1.414ZM9 14a5 5 0 0 1-5-5H2a7 7 0 0 0 7 7v-2ZM4 9a5 5 0 0 1 5-5V2a7 7 0 0 0-7 7h2Zm5-5a5 5 0 0 1 5 5h2a7 7 0 0 0-7-7v2Zm8.707 12.293-3.757-3.757-1.414 1.414 3.757 3.757 1.414-1.414ZM14 9a4.98 4.98 0 0 1-1.464 3.536l1.414 1.414A6.98 6.98 0 0 0 16 9h-2Zm-1.464 3.536A4.98 4.98 0 0 1 9 14v2a6.98 6.98 0 0 0 4.95-2.05l-1.414-1.414Z" />
-    </svg>
-  )
-}
 
 function useAutocomplete({
   close,
@@ -87,54 +82,23 @@ function useAutocomplete({
         navigate,
       },
       getSources({ query }) {
-        return import("@/markdoc/search.mjs").then(({ search }) => {
-          return [
-            {
-              sourceId: "documentation",
-              getItems() {
-                return search(query, { limit: 5 })
-              },
-              getItemUrl({ item }) {
-                return item.url
-              },
-              onSelect: navigate,
+        return [
+          {
+            sourceId: "documentation",
+            getItems() {
+              return search(query, { limit: 5 })
             },
-          ]
-        })
+            getItemUrl({ item }) {
+              return item.url
+            },
+            onSelect: navigate,
+          },
+        ]
       },
     }),
   )
 
   return { autocomplete, autocompleteState }
-}
-
-function LoadingIcon(props: React.ComponentPropsWithoutRef<"svg">) {
-  let id = useId()
-
-  return (
-    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" {...props}>
-      <circle cx="10" cy="10" r="5.5" strokeLinejoin="round" />
-      <path
-        stroke={`url(#${id})`}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M15.5 10a5.5 5.5 0 1 0-5.5 5.5"
-      />
-      <defs>
-        <linearGradient
-          id={id}
-          x1="13"
-          x2="9.5"
-          y1="9"
-          y2="15"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="currentColor" />
-          <stop offset="1" stopColor="currentColor" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-    </svg>
-  )
 }
 
 function HighlightQuery({ text, query }: { text: string; query: string }) {

@@ -8,10 +8,7 @@ export interface MainLayoutProps {
 
 export function MainLayout({ children, hero }: MainLayoutProps) {
   return (
-    <div
-      className="flex w-full flex-col"
-      style={{ timelineScope: "--tl" } as React.CSSProperties}
-    >
+    <div className="flex w-full flex-col [timeline-scope:_--tl]">
       <Header />
       {hero}
 
