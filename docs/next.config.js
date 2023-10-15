@@ -1,11 +1,11 @@
-import remarkFrontmatterMeta from "./src/config/remark-frontmatter-meta.js"
 import withSearch from "./src/config/search.js"
 import { fileURLToPath } from "node:url"
-import rehypeShiki from "./src/config/rehype-shiki.js"
 import remarkFrontmatter from "remark-frontmatter"
 import remarkMdxFrontmatter from "remark-mdx-frontmatter"
 import mdx from "@next/mdx"
 import shiki from "shiki"
+import rehypeShiki from "@mskelton/rehype-shiki"
+import remarkExtractFrontmatter from "@mskelton/remark-extract-frontmatter"
 
 /** @type {import('next').NextConfig} */
 const config = {
@@ -22,7 +22,7 @@ const withMDX = mdx({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [
-      remarkFrontmatterMeta,
+      remarkExtractFrontmatter,
       remarkFrontmatter,
       [remarkMdxFrontmatter, { name: "meta" }],
     ],

@@ -44,6 +44,12 @@ importers:
       '@mdx-js/react':
         specifier: ^2.3.0
         version: 2.3.0(react@18.2.0)
+      '@mskelton/rehype-shiki':
+        specifier: ^0.0.1
+        version: 0.0.1(shiki@0.14.5)
+      '@mskelton/remark-extract-frontmatter':
+        specifier: ^0.0.1
+        version: 0.0.1
       '@next/mdx':
         specifier: ^13.5.4
         version: 13.5.4(@mdx-js/loader@2.3.0)(@mdx-js/react@2.3.0)
@@ -104,6 +110,9 @@ importers:
       remark-mdx-frontmatter:
         specifier: ^3.0.0
         version: 3.0.0
+      remark-parse:
+        specifier: ^11.0.0
+        version: 11.0.0
       shiki:
         specifier: ^0.14.5
         version: 0.14.5
@@ -119,6 +128,9 @@ importers:
       typescript:
         specifier: 5.1.6
         version: 5.1.6
+      unified:
+        specifier: ^11.0.3
+        version: 11.0.3
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.0.0
@@ -488,6 +500,22 @@ packages:
       '@types/mdx': 2.0.8
       '@types/react': 18.2.20
       react: 18.2.0
+    dev: false
+
+  /@mskelton/rehype-shiki@0.0.1(shiki@0.14.5):
+    resolution: {integrity: sha512-xIVgi3aPBzwseoAFeACS7XW69J7DFhaXHfSek1vtfvcoTjfGddqtrtc4asjTeQmmk6Dd/GvfctbOQTyahWVS7A==}
+    peerDependencies:
+      shiki: '>=0.14.5'
+    dependencies:
+      hast-util-to-text: 4.0.0
+      shiki: 0.14.5
+      unist-util-visit: 5.0.0
+    dev: false
+
+  /@mskelton/remark-extract-frontmatter@0.0.1:
+    resolution: {integrity: sha512-ItqWpZJkPqX+xyjaX6LQSU4+HHhQF3s01KuJww1RJYL9/BAFbhkDhTMLOYXVTIbM00UPT1k9qORkhL6JZ4eWaw==}
+    dependencies:
+      vfile-matter: 5.0.0
     dev: false
 
   /@next/env@13.4.16:
@@ -4065,6 +4093,17 @@ packages:
       '@types/mdast': 3.0.13
       mdast-util-from-markdown: 1.3.1
       unified: 10.1.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /remark-parse@11.0.0:
+    resolution: {integrity: sha512-FCxlKLNGknS5ba/1lmpYijMUzX2esxW5xQqjWxw2eHFfS2MSdaHVINFmhjo+qN1WhZhNimq0dZATN9pH0IDrpA==}
+    dependencies:
+      '@types/mdast': 4.0.1
+      mdast-util-from-markdown: 2.0.0
+      micromark-util-types: 2.0.0
+      unified: 11.0.3
     transitivePeerDependencies:
       - supports-color
     dev: false
