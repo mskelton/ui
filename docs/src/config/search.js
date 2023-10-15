@@ -1,5 +1,5 @@
 import remarkParse from "remark-parse"
-import remarkFrontmatterMeta from "./remark-frontmatter-meta.js"
+import remarkExtractFrontmatter from "@mskelton/remark-extract-frontmatter"
 import remarkFrontmatter from "remark-frontmatter"
 import { unified } from "unified"
 import { slugifyWithCounter } from "@sindresorhus/slugify"
@@ -72,7 +72,7 @@ export default function withSearch(nextConfig = {}) {
                 let file = unified()
                   .use(remarkParse)
                   .use(remarkFrontmatter)
-                  .use(remarkFrontmatterMeta)
+                  .use(remarkExtractFrontmatter)
                   .use(remarkAST)
                   .processSync(md)
 

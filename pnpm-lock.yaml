@@ -44,6 +44,9 @@ importers:
       '@mdx-js/react':
         specifier: ^2.3.0
         version: 2.3.0(react@18.2.0)
+      '@mskelton/rehype-callout':
+        specifier: ^0.0.3
+        version: 0.0.3
       '@mskelton/rehype-shiki':
         specifier: ^0.0.1
         version: 0.0.1(shiki@0.14.5)
@@ -500,6 +503,12 @@ packages:
       '@types/mdx': 2.0.8
       '@types/react': 18.2.20
       react: 18.2.0
+    dev: false
+
+  /@mskelton/rehype-callout@0.0.3:
+    resolution: {integrity: sha512-t7Mqw8+dgZSqnpuS8ysX8KB92rv7nq0DiKujjVRWmYJSbTH44+HOP8tkDn5ss9cWSRVpQRoEDbWf3enJtqRVjw==}
+    dependencies:
+      unist-util-visit: 5.0.0
     dev: false
 
   /@mskelton/rehype-shiki@0.0.1(shiki@0.14.5):

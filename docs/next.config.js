@@ -6,6 +6,7 @@ import mdx from "@next/mdx"
 import shiki from "shiki"
 import rehypeShiki from "@mskelton/rehype-shiki"
 import remarkExtractFrontmatter from "@mskelton/remark-extract-frontmatter"
+import rehypeCallout from "./src/config/rehype-callout.js"
 
 /** @type {import('next').NextConfig} */
 const config = {
@@ -26,7 +27,7 @@ const withMDX = mdx({
       remarkFrontmatter,
       [remarkMdxFrontmatter, { name: "meta" }],
     ],
-    rehypePlugins: [[rehypeShiki, { highlighter }]],
+    rehypePlugins: [rehypeCallout, [rehypeShiki, { highlighter }]],
   },
 })
 
